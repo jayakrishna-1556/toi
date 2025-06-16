@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Times of India - Home</title>
+  <link rel="stylesheet" href="<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="container">
+      <h1>TIMES OF INDIA</h1>
+      <p class="tagline">Trusted News Source</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">India</a></li>
+      <li><a href="#">World</a></li>
+      <li><a href="#">Tech</a></li>
+      <li><a href="#">Cricket</a></li>
+      <li><a href="#">Business</a></li>
+      <li><a href="#">Sports</a></li>
+      <li><a href="#">Entertainment</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREAKING NEWS -->
+  <section class="breaking-news">
+    <div class="container">
+      <strong>Breaking:</strong> Govt launches new AI policy to promote innovation in India.
+    </div>
+  </section>
+
+  <!-- FEATURED ARTICLES -->
+  <section class="featured-articles container">
+    <div class="article">
+      <img src="https://img.etimg.com/thumb/width-1600,height-900,imgsize-1084032,resizemode-75,msid-106580317/news/economy/indicators/economic-growth-pegged-at-7-3-in-fy24-higher-than-fy23.jpg" alt="news"/>
+      <h2>India's Economic Growth Hits New High</h2>
+      <p>India's economic growth is experiencing a period of high performance, with the latest reports indicating a strong recovery and growth, particularly in the fourth quarter. While the overall fiscal year growth might be lower, the recent quarterly results have surpassed expectations. This positive trend positions India as the fastest-growing major economy. .</p>
+    </div>
+    <div class="article">
+      <img src="https://bsmedia.business-standard.com/_media/bs/img/article/2024-10/24/thumb/featurecrop/600X300/1729739267-8826.jpg" alt="tech"/>
+      <h2>Tech Giants Invest in India's Startup Ecosystem</h2>
+      <p>The Indian startup ecosystem is experiencing significant investment from tech giants, fueling growth and innovation. India has become the world's third-largest startup hub, with over 1.57 lakh startups recognized by the Department for Promotion of Industry and Internal Trade (DPIIT). This ecosystem is characterized by a vibrant network of entrepreneurs, investors, incubators, and supporting entities.</p>
+    </div>
+  </section>
+
+  <!-- CATEGORY SECTIONS -->
+  <section class="categories container">
+    <h2>Sports</h2>
+    <div class="category-grid">
+      <div class="card">
+        <img src="https://static.toiimg.com/thumb/imgsize-23456,msid-67414953,width-600,resizemode-4/67414953.jpg" alt="Cricket" />
+        <h3>India Wins Test Series Against Australia</h3>
+      </div>
+      <div class="card">
+        <img src="https://www.indiansuperleague.com/static-assets/waf-images/c2/cd/af/16-9/d6PIvMnULJ.jpg?v=100.71&w=800" alt="Football" />
+        <h3>ISL 2025: Bengaluru FC Enters Finals</h3>
+      </div>
+    </div>
+
+    <h2>Entertainment</h2>
+    <div class="category-grid">
+      <div class="card">
+        <img src="https://static.toiimg.com/thumb/imgsize-95190,msid-118971117,width-375,height-210,resizemode-75/118971117.jpg" alt="Movie" />
+        <h3>Bollywood's Summer Blockbuster Breaks Records</h3>
+      </div>
+      <div class="card">
+        <img src="https://images.moneycontrol.com/static-mcnews/2025/04/20250410115148_ott-april.jpg?impolicy=website&width=770&height=431" alt="Series" />
+        <h3>Top 10 Web Series to Watch in 2025</h3>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 TIMES OF INDIA | All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
