@@ -1,0 +1,116 @@
+import 'package:flutter/material.dart';
+
+void main() => runApp(TOINewsApp());
+
+class TOINewsApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Times of India News',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
+}
+
+class HomeScreen extends StatelessWidget {
+  final List<String> categories = [
+    "Top Stories", "India", "World", "Business", "Technology", "Entertainment", "Sports"
+  ];
+
+  final List<Map<String, String>> articles = List.generate(10, (index) => {
+        'title': 'Breaking News Headline $index',
+        'image': 'https://img.etimg.com/thumb/width-1600,height-900,imgsize-1084032,resizemode-75,msid-106580317/news/economy/indicators/economic-growth-pegged-at-7-3-in-fy24-higher-than-fy23.jpg',
+        'content': 'This is the detailed content for news item $index. '
+            'It contains a lot of important information regarding current events.',
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+
+    return Scaffold(
+      appBar: AppBar(title: Text('TOI News')),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 50,
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemCount: categories.length,
+              itemBuilder: (_, i) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                child: Chip(label: Text(categories[i])),
+              ),
+            ),
+          ),
+          Expanded(
+            child: ListView.builder(
+              itemCount: articles.length,
+              itemBuilder: (_, i) {
+                final article = articles[i];
+                return GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => ArticleDetail(article: article),
+                    ),
+                  ),
+                  child: Card(
+                    margin: const EdgeInsets.all(10),
+                    elevation: 4,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Image.network(article['image']!, fit: BoxFit.cover, width: double.infinity),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(article['title']!,
+                              style: TextStyle(fontSize: width > 600 ? 22 : 18, fontWeight: FontWeight.bold)),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ArticleDetail extends StatelessWidget {
+  final Map<String, String> article;
+  ArticleDetail({required this.article});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Article Detail")),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Image.network(article['image']!, width: double.infinity),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                article['title']!,
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                article['content']!,
+                style: TextStyle(fontSize: 16, height: 1.5),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
